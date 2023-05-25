@@ -1,5 +1,4 @@
 ﻿# Key codes  can be found here
-# https://msdn.microsoft.com/en-us/library/aa299374%28v=vs.60%29.aspx?f=255&MSPPError=-2147217396
 #
 # Explanation of how it works can be found here: 
 # http://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/
@@ -13,6 +12,8 @@ $name = "Scancode Map"
 [byte[]]$dataLength = 2,0,0,0
 [byte[]]$keyTeminator = 0,0,0,0
 
+# Some mappings; there are loads more here:
+# https://msdn.microsoft.com/en-us/library/aa299374%28v=vs.60%29.aspx?f=255&MSPPError=-2147217396
 [byte[]]$noKey = 0,0
 [byte[]]$capsLock = 0x3a,0
 [byte[]]$f7 = 0x41,0
@@ -24,5 +25,6 @@ function buildMapping([byte[]]$from, [byte[]]$to) {
     return $prefix + $dataLength + $to + $from + $keyTeminator
 }
 
+# TODO: choose the mapping you want to make here and run the script
 [byte[]]$mapping = buildMapping -from $capsLock -to $f8
 New-ItemProperty -Force -Name $name -PropertyType Binary -Path $registryPath -Value $mapping
