@@ -3,6 +3,8 @@
 #
 # Explanation of how it works can be found here: 
 # http://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/
+#
+# tested on Windows 10
 
 $registryPath = 'HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout'
 $name = "Scancode Map"
