@@ -2,8 +2,6 @@
 # I make no guarantees that it works or won't damage your computer.
 # Licence MIT (see LICENCE)
 #
-# Key codes  can be found here
-#
 # Explanation of how it works can be found here: 
 # http://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/
 #
